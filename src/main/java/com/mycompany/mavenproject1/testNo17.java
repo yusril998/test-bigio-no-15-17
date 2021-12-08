@@ -26,19 +26,21 @@ public class testNo17 {
 
     public static void findZigZagSequence(int[] a, int n) {
         Arrays.sort(a);
-        int mid = (n + 1) / 2;
+        int mid = ((n - 1) / 2);// berubah
         int temp = a[mid];
         a[mid] = a[n - 1];
         a[n - 1] = temp;
 
         int st = mid + 1;
-        int ed = n - 1;
-        while (st <= ed) {
+        int ed = n - 2; // berubah
+
+
+        while (st < ed) {
             temp = a[st];
             a[st] = a[ed];
             a[ed] = temp;
             st = st + 1;
-            ed = ed + 1;
+            ed = ed - 2; // berubah
         }
         for (int i = 0; i < n; i++) {
             if (i > 0) {
@@ -48,4 +50,5 @@ public class testNo17 {
         }
         System.out.println();
     }
+
 }
